@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Sign Up
+{% endblock %}
+
+{% block main %}
+<form action="/sign_up" class="mb-3" method="post">
+    <div class="mb-3">
+        <input autocomplete="off" autofocus class="form-control mx-auto w-auto" type="text" id="name" name="name" placeholder="Name">
+    </div>
+    <div class="mb-3">
+        <input autocomplete="off" autofocus class="form-control mx-auto w-auto" type="text" id="last_name" name="last_name" placeholder="Last Name">
+    </div>
+    <div class="mb-3">
+        <input autocomplete="off" autofocus class="form-control mx-auto w-auto" type="text" id="username" name="username" placeholder="Username">
+    </div>
+    <div class="mb-3">
+        <input autocomplete="off" autofocus class="form-control mx-auto w-auto" type="password"  id="password" name="password" placeholder="Password">
+    </div>
+    <div class="mb-3">
+        <input autocomplete="off" autofocus class="form-control mx-auto w-auto" type="password" id="confirmation" name="confirmation" placeholder="Re-type Password">
+    </div>
+    <div class="mb-3">
+        <input autocomplete="off" autofocus class="form-control mx-auto w-auto" type="date" id="dob" name="dob" placeholder="Date of Birth">
+    </div>
+    <div class="mb-3">
+        <button class="btn btn-primary" type="submit">Sign Up</button>
+    </div>
+</form>
+{% endblock %}

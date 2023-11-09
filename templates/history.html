@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+    <table class="table table-striped">
+        <thead class="table-dark">
+            <th>Source Currency</th>
+            <th>Target Currency</th>
+            <th>Amount</th>
+            <th>Total</th>
+            <th>Time</th>
+        </thead>
+
+        <tbody>
+            {% for history in histories %}
+                <tr>
+                    <td>{{ history["source_currency"] }}</td>
+                    <td>{{ history["target_currency"] }}</td>
+                    <td>{{ history["amount"] }}</td>
+                    <td>{{ history["total"] }}</td>
+                    <td>{{ history["date_time"] }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Calculator
+{% endblock %}
+
+{% block main %}
+    <form action="/calculator" class="mb-3" method="post">
+        
+        <div class="mb-3">
+            <select class="form-select" aria-label="Default select example" name="source_currency">
+                <option disabled selected>Source Currency</option>
+                {% for currency, rate in rates.conversion_rates.items() %}
+                    <option value="{{ currency }}">{{ currency }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <select class="form-select" aria-label="Default select example" name="target_currency">
+                <option disabled selected>Target Currency</option>
+                {% for currency, rate in rates.conversion_rates.items() %}
+                    <option value="{{ currency }}">{{ currency }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <input autocomplete="off" autofocus min=1 class="form-control mx-auto w-auto" name="amount" placeholder="Amount" type="number">
+        </div>
+        <div class="mb-3">
+            <button class="btn btn-primary" type="submit">Exchange</button>
+        </div>
+    </form>
+    <div class="mb-5 small text-center text-muted">
+        <h6>Last update {{ rates["time_last_update_utc"] }} UTC</h6>
+    </div>
+{% endblock %}

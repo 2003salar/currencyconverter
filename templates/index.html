@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block main %}
+    <div class="mb-3">
+        <table class="table table-striped">
+            <div class="mb-3">
+                 <h5>United States Dollor (USD) Rate Against International Currenies</h5>
+            </div>
+            <thead class="table-dark">
+                <th>Currency</th>
+                <th>Rate</th>
+            </thead>
+            <tbody>
+                {% for key, value in currency.conversion_rates.items() %}
+                    {% if key != 'USD' %}
+                    <tr>
+                        <td>{{ key }}</td>
+                        <td>{{ value }}</td>
+                    </tr>
+                    {% endif %}
+                {% endfor %}
+            </tbody>
+            
+            <tfoot>
+                <h6>Last update {{ currency["time_last_update_utc"] }} UTC</h6>
+            </tfoot>
+        </table>
+    </div>
+    
+{% endblock %}

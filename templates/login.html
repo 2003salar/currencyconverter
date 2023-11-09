@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block main %}
+    <form action="/login" class="mb-3" method="post">
+        <div class="mb-3">
+           <img src="../static/currency_converter.jpg" alt="Login">
+        </div>
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" type="text" id="username" name="username" placeholder="Username">
+        </div>
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" type="password"  id="password" name="password" placeholder="Password">
+        </div>
+        <div class="mb-3">
+            <button class="btn btn-primary" type="submit">Log In</button>
+        </div>
+    </form>
+{% endblock %}
