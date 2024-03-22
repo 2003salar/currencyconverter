@@ -33,8 +33,9 @@ def login_required(f):
 
 
 def currency_rate(currency):
+    myKey = ''
     try:
-        url = f"https://v6.exchangerate-api.com/v6/f15c12db1b3c357a44accb1e/latest/{currency}"
+        url = f"https://v6.exchangerate-api.com/v6/{myKey}/latest/{currency}"
         response = requests.get(url)
         data = response.json()
         return data
